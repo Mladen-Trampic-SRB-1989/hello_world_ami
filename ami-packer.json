@@ -14,7 +14,7 @@
             "name": "amzn2-ami-hvm-2.*",
             "root-device-type": "ebs"
         },
-        "owners": ["679593333241"],
+        "owners": ["137112412989"],
         "most_recent": true
       }
     }
