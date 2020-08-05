@@ -1,0 +1,34 @@
+{
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "region": "eu-central-1",
+      "instance_type": "t2.micro",
+      "vpc_id" : "vpc-03b5846b",
+      "subnet_id" : "subnet-b0e816fd",
+      "ssh_username": "ec2-user",
+      "ami_name": "AWS_HELLO_WORLD-{{timestamp}}",
+      "source_ami_filter": {
+        "filters": {
+            "virtualization-type": "hvm",
+            "name": "amzn2-ami-hvm-2.*",
+            "root-device-type": "ebs"
+        },
+        "owners": ["679593333241"],
+        "most_recent": true
+      }
+    }
+  ],
+
+  "provisioners": [
+    {
+      "type": "file",
+      "source" : "./upload/",
+      "destination" : "/tmp"
+    },
+    {
+      "type": "shell",
+      "script": "setup.sh",
+    }
+  ]
+}
