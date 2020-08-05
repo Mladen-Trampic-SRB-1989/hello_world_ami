@@ -8,6 +8,7 @@
       "subnet_id" : "subnet-b0e816fd",
       "ssh_username": "ec2-user",
       "ami_name": "AWS_HELLO_WORLD-{{timestamp}}",
+      "ami_groups": ["all"],
       "source_ami_filter": {
         "filters": {
             "virtualization-type": "hvm",
