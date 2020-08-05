@@ -1,11 +1,15 @@
 {
+  "variables": {
+    "VPC_ID" : "{{env `VPC_ID`}}",
+    "SUBNET_ID" : "{{env `SUBNET_ID`}}"
+  },
   "builders": [
     {
       "type": "amazon-ebs",
       "region": "us-west-1",
       "instance_type": "t2.micro",
-      "vpc_id" : "{{env `VPC_ID`}}",
-      "subnet_id" : "{{env `SUBNET_ID`}}",
+      "vpc_id" : "{{user `VPC_ID`}}",
+      "subnet_id" : "{{user `SUBNET_ID`}}",
       "ssh_username": "ec2-user",
       "ami_name": "AWS_HELLO_WORLD-{{timestamp}}",
       "ami_groups": ["all"],
