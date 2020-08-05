@@ -13,7 +13,7 @@ sudo yum -y install \
 sudo cp /tmp/httpd/httpd.conf /etc/httpd/conf/httpd.conf
 
 #copy static content
-sudo cp -r /tmp/html/ /var/www/html/
+sudo cp -r /tmp/html/* /var/www/html/
 
 #enable HTTPD by default
 sudo systemctl enable httpd --now

@@ -458,6 +458,16 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
   else {
     newNode.className = "navbar navbar-fixed-top";
   }
+  if (!navbarEl && titleEl) {
+    newNode.innerHTML = '<div class="navbar-inner"> <div class="container"> <div id="headline" class="brand"> </div> </div> </div>';
+    if (!(queryOrigin['nonnavbar'])) {
+        document.body.insertBefore(newNode, document.body.firstChild);
+    }
+    var title = titleEl.innerHTML;
+    var headlineEl = document.getElementById('headline');
+    if (headlineEl)
+      headlineEl.innerHTML = title;
+  }
 
   //////////////////////////////////////////////////////////////////////
   //
