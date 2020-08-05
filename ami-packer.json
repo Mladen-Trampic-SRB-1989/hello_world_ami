@@ -5,7 +5,7 @@
       "region": "eu-central-1",
       "instance_type": "t2.micro",
       "vpc_id" : "vpc-48c7e32c",
-      "subnet_id" : "subnet-958545f2",
+      "subnet_id" : "subnet-8f3422d7",
       "ssh_username": "ec2-user",
       "ami_name": "AWS_HELLO_WORLD-{{timestamp}}",
       "ami_groups": ["all"],
@@ -15,7 +15,7 @@
             "name": "amzn2-ami-hvm-2.*",
             "root-device-type": "ebs"
         },
-        "owners": ["137112412989"],
+        "owners": ["692283183652"],
         "most_recent": true
       }
     }
