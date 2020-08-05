@@ -1,17 +1,18 @@
 {
   "variables": {
     "VPC_ID" : "{{env `VPC_ID`}}",
-    "SUBNET_ID" : "{{env `SUBNET_ID`}}"
+    "SUBNET_ID" : "{{env `SUBNET_ID`}}",
+    "AWS_REGION" : "{{env `AWS_REGION`}}"
   },
   "builders": [
     {
       "type": "amazon-ebs",
-      "region": "us-west-1",
+      "region": "{{user `AWS_REGION`}}",
       "instance_type": "t2.micro",
       "vpc_id" : "{{user `VPC_ID`}}",
       "subnet_id" : "{{user `SUBNET_ID`}}",
       "ssh_username": "ec2-user",
-      "ami_name": "AWS_HELLO_WORLD-{{timestamp}}",
+      "ami_name": "AWS_HELLO_WORLD-{{isotime | clean_resource_name}}",
       "ami_groups": ["all"],
       "source_ami_filter": {
         "filters": {
